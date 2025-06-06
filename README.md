@@ -95,7 +95,7 @@ pip install -r requirements.txt
 
 ### Environment Setup
 
-Create a `.env` file if needed to configure LLM or tool endpoints.
+Create a `.env` file to configure LLM (here for **OPENAI** use `OPENAI_API_KEY` )
 
 ---
 
@@ -176,5 +176,7 @@ Contributions are welcome! Please follow these steps:
 ## 📬 Contact
 
 **Dr. Rajkrishna Mondal**
+
 Data Scientist | Ph.D. in Computational Mathematics
+
 [GitHub](https://github.com/rajkrishna92) | [Blog](https://www.rajkrishna92.github.io)
