@@ -8,4 +8,5 @@ langgraph-checkpoint-sqlite==2.0.10
 fastapi==0.115.12
 uvicorn==0.34.3
 langgraph-supervisor==0.0.27
+streamlit==1.45.1
 -e .

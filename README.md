@@ -12,6 +12,8 @@ This project demonstrates an **AI-powered multi-agent system** for booking, resc
 * [Tech Stack](#tech-stack)
 * [Installation](#installation)
 * [Usage](#usage)
+* [API + Streamlit Guide](#api--streamlit-guide)
+* [Conversation History](#conversation-history)
 * [Folder Structure](#folder-structure)
 * [License](#license)
 * [Contact](#contact)
@@ -91,11 +93,15 @@ cd Appointment-Booking-Multi-Agent
 python3 -m venv venv
 source venv/bin/activate # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
-```
+````
 
 ### Environment Setup
 
-Create a `.env` file to configure LLM (here for **OPENAI** use `OPENAI_API_KEY` )
+Create a `.env` file and add your OpenAI key:
+
+```
+OPENAI_API_KEY=your_openai_key_here
+```
 
 ---
 
@@ -111,20 +117,77 @@ You’ll see a full conversation trace based on your initial message (e.g. `"wha
 
 ---
 
+## 🌐 API + Streamlit Guide
+
+### Start FastAPI Server
+
+```bash
+uvicorn api:app --reload
+```
+
+Ensure `api.py` has the POST route `/execute` accepting JSON with `email` and `messages`.
+
+### Start Streamlit Application
+
+```bash
+streamlit run stremlit.py
+```
+
+---
+
+## 💬 Conversation History
+
+```
+You: Who is available for consultation today?
+
+Assistant: I'm sorry, but Alice Johnson is fully booked for consultations on the date of 07-06-2025. Would you like to check availability for other days or for a different individual?
+
+You: for AI ML related?
+
+Assistant: I'm sorry, but there are no available slots today for consultations related to AI/ML. Can we check availability for another day?
+
+You: for 9-6-2025
+
+Assistant: On the 9th of June, 2025, George Kim is available for a consultation on AI/ML at 12:00 PM. Would you like me to book this appointment for you? If so, I'll need the name of the person for whom this appointment is being made.
+
+You: book it for Rajkrishna
+
+Assistant: The consultation with George Kim on June 9, 2025, at 12:00 PM has been successfully booked for Rajkrishna. Please let me know if you need assistance with anything else.
+
+You: oh sorry I want to cancel it for now
+
+Assistant: Alright, the appointment with George Kim on the 9th of June, 2025, for Rajkrishna has been canceled. If you wish to reschedule or need any other assistance, feel free to ask.
+
+You: reschedule it
+
+Assistant: Sure, I can assist you with that. Could you please provide the new date and time you would like to reschedule the appointment to?
+
+You: after 7 day at the same time
+
+Assistant: I have rescheduled your appointment with George Kim for AI/ML consultation on June 16, 2025, at 12:00 PM. If you have any other requests or need further information, feel free to ask.
+
+You: Thanks
+
+Assistant: You're welcome! If you have any other questions in the future, don't hesitate to ask. Have a great day!
+```
+
+---
+
 ## 📁 Folder Structure
 
 ```
 Appointment-Booking-Multi-Agent/
 ├── agent.py
+├── main.py                 # FastAPI interface
 ├── data
 │   ├── availability.csv
 │   └── checkpoint.db
-├── main.py
 ├── prompt
 │   ├── __init__.py
-│   ├── prompt.py
+│   └── prompt.py
 ├── README.md
 ├── requirements.txt
+├── stremlit.py
 ├── setup.py
 ├── toolkit
 │   ├── __init__.py
@@ -136,12 +199,13 @@ Appointment-Booking-Multi-Agent/
     └── llm.py
 ```
 
+* **main.py**: FastAPI endpoint for integration
 * **data/**: Contains records and other relevant data files.
 * **prompt/**: Holds prompt templates for agent interactions.
 * **toolkit/**: Includes tools and utilities for scheduling logic.
 * **utils/**: Helper functions used across the project.
-* **agent.py**: Defines the agent classes and their behaviors.
-* **main.py**: Entry point of the application.
+* **agent.py**: Entry point of the agent application.
+* **stremlit.py**: Sample Streamlit application
 
 ---
 
