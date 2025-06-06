@@ -1,0 +1,7 @@
+.env
+.venv
+NOTEBOOK
+appointment_booking.egg-info
+__pycache__
+*.db
+
