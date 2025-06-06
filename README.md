@@ -89,7 +89,7 @@ Handles:
 git clone https://github.com/rajkrishna92/Appointment-Booking-Multi-Agent.git
 cd Appointment-Booking-Multi-Agent
 python3 -m venv venv
-source venv/bin/activate
+source venv/bin/activate # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
