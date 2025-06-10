@@ -15,7 +15,6 @@ This project demonstrates an **AI-powered multi-agent system** for booking, resc
 * [API + Streamlit Guide](#api--streamlit-guide)
 * [Conversation History](#conversation-history)
 * [Folder Structure](#folder-structure)
-* [License](#license)
 * [Contact](#contact)
 
 ---
