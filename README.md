@@ -121,7 +121,7 @@ You’ll see a full conversation trace based on your initial message (e.g. `"wha
 ### Start FastAPI Server
 
 ```bash
-uvicorn api:app --reload
+uvicorn main:app --reload
 ```
 
 Ensure `api.py` has the POST route `/execute` accepting JSON with `email` and `messages`.
